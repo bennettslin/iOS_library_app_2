@@ -27,6 +27,7 @@
 		3F2838AB1808F9E500534910 /* Library.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2838AA1808F9E500534910 /* Library.m */; };
 		3F2838AE1808F9EF00534910 /* Shelf.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2838AD1808F9EF00534910 /* Shelf.m */; };
 		3F2838B11808F9F800534910 /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2838B01808F9F800534910 /* Book.m */; };
+		3F7634B7180A47C20091222D /* BookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F7634B6180A47C20091222D /* BookViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,8 @@
 		3F2838AD1808F9EF00534910 /* Shelf.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shelf.m; sourceTree = "<group>"; };
 		3F2838AF1808F9F800534910 /* Book.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = "<group>"; };
 		3F2838B01808F9F800534910 /* Book.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = "<group>"; };
+		3F7634B5180A47C10091222D /* BookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookViewController.h; sourceTree = "<group>"; };
+		3F7634B6180A47C20091222D /* BookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +146,8 @@
 				3F2838A41808E8A600534910 /* ShelvesTableViewController.m */,
 				3F2838A61808ED6800534910 /* BooksTableViewController.h */,
 				3F2838A71808ED6800534910 /* BooksTableViewController.m */,
+				3F7634B5180A47C10091222D /* BookViewController.h */,
+				3F7634B6180A47C20091222D /* BookViewController.m */,
 				3F2838A91808F9E500534910 /* Library.h */,
 				3F2838AA1808F9E500534910 /* Library.m */,
 				3F2838AC1808F9EF00534910 /* Shelf.h */,
@@ -283,6 +288,7 @@
 				3F2838A21808E72D00534910 /* LibrariesTableViewController.m in Sources */,
 				3F241673180900D900DCCEDF /* LibraryDataController.m in Sources */,
 				3F2838AB1808F9E500534910 /* Library.m in Sources */,
+				3F7634B7180A47C20091222D /* BookViewController.m in Sources */,
 				3F2838B11808F9F800534910 /* Book.m in Sources */,
 				3F28387C1808E68100534910 /* main.m in Sources */,
 				3F2838AE1808F9EF00534910 /* Shelf.m in Sources */,

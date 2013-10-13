@@ -12,9 +12,9 @@
 
 @interface Book : NSObject
 @property NSString *title;
-@property id onThisShelf;
+@property Shelf *onThisShelf;
 
-- (id) unShelf;
+- (void) unShelf;
 - (void) enShelf: (Shelf *) shelf;
 
 @end

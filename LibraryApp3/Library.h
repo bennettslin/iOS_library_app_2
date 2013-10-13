@@ -18,7 +18,7 @@
 - (void) createShelf: (NSString *) genre;
 - (void) seedShelves;
 - (void) reportShelves;
-- (BOOL) reShelfBook: (NSString *) title ontoShelf: (NSString *) genre;
+//- (BOOL) reShelfBook: (NSString *) title ontoShelf: (NSString *) genre;
 - (Book *) searchForBook: (NSString *) title;
 - (Shelf *) searchForShelf: (NSString *) genre;
 

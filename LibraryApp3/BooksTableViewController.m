@@ -8,6 +8,7 @@
 
 #import "LibraryDataController.h"
 #import "BooksTableViewController.h"
+#import "BookViewController.h"
 #import "Shelf.h"
 
 @interface BooksTableViewController ()
@@ -27,7 +28,8 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
+  [super viewDidLoad];
+  self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addTapped:)];
   
 //    self.books = @[@"Book 1", @"Book 2"];
 
@@ -36,6 +38,11 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+// return to previous view will reflect edited data
+  [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -67,11 +74,24 @@
     cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
   }
   
-  cell.detailTextLabel.text = self.onThisShelf.genre;
+  cell.detailTextLabel.text = [self.onThisShelf.genre capitalizedString];
   cell.textLabel.text = [self.onThisShelf.all_books[indexPath.row] title];
     // Configure the cell...
     
     return cell;
+}
+
+-(void)addTapped:(id)sender {
+  
+  [self.onThisShelf createBook:@"New Book"];
+  
+  NSLog(@"%i is the indexPath row", [self.onThisShelf.all_books count] - 1);
+  NSIndexPath *indexPath = [NSIndexPath indexPathForRow:([self.onThisShelf.all_books count] - 1) inSection:0];
+  NSArray *indexPaths = [NSArray arrayWithObject:indexPath];
+  [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:YES];
+  NSLog(@"%i is the indexPath row", indexPath.row);
+  [self.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionMiddle];
+//  [self performSegueWithIdentifier:@"bookCellPressed" sender:self];
 }
 
 /*
@@ -113,16 +133,22 @@
 }
 */
 
-/*
 #pragma mark - Navigation
 
 // In a story board-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+  if ([segue.identifier isEqualToString:@"bookCellPressed"]) {
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+    Book *thisBook = self.onThisShelf.all_books[indexPath.row];
+    
+    BookViewController *bvc = [segue destinationViewController];
+    bvc.thisBook = thisBook;
+  }
+  
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
 
- */
 
 @end

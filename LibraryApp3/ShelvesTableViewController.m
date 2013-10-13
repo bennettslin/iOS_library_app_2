@@ -73,7 +73,7 @@
 //  NSLog(@"%s", thisIsShelf ? "yes, it's a Shelf" : "no, it's not a Shelf");
   
   cell.detailTextLabel.text = self.inThisLibrary.branch;
-  cell.textLabel.text = [self.inThisLibrary.all_shelves[indexPath.row] genre];
+  cell.textLabel.text = [[self.inThisLibrary.all_shelves[indexPath.row] genre] capitalizedString];
   
     // Configure the cell...
     

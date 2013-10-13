@@ -15,13 +15,12 @@
 //  return self.title;
 //}
 
-- (Shelf *) unShelf {
-  // doesn't actually delete, but method is called only when followed by enShelf
-  return self.onThisShelf;
+- (void) unShelf {
+  [self.onThisShelf removeBook:self];
 }
 
 - (void) enShelf: (Shelf *) shelf {
-  self.onThisShelf = shelf;
+  [shelf addBook:self];
 }
 
 @end

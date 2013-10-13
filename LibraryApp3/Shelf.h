@@ -8,11 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import "Book.h"
+@class Library;
 @class Book;
 
 @interface Shelf : NSObject
 @property NSString *genre;
 @property NSMutableArray *all_books;
+@property Library *inThisLibrary;
 
 - (void) createBook: (NSString *) title;
 - (void) seedBooks;

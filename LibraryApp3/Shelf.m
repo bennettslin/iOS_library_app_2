@@ -42,10 +42,12 @@
 
 - (void) removeBook: (Book *) book {
   [self.all_books removeObject: book];
+  NSLog(@"There are now %i books on the %@ shelf after removing.", [self.all_books count], self.genre);
 }
 
 - (void) addBook: (Book *) book {
   [self.all_books addObject: book];
+  NSLog(@"There are now %i books on the %@ shelf after adding.", [self.all_books count], self.genre);
 }
 
 @end

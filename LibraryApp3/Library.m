@@ -29,6 +29,7 @@
 - (void) createShelf: (NSString *) genre {
   Shelf *new_shelf = [[Shelf alloc] init];
   new_shelf.genre = genre;
+  new_shelf.inThisLibrary = self;
   new_shelf.all_books = [[NSMutableArray alloc] init];
   [new_shelf seedBooks];
   [self.all_shelves addObject:new_shelf];
@@ -72,30 +73,30 @@
   return 0;
 }
 
-- (BOOL) reShelfBook: (NSString *) title ontoShelf: (NSString *) genre {
-  
-  // searches for book by title, returns book and shelf if found
-  Book *book = [self searchForBook: title];
-  if (book == 0) {
-    NSLog(@"That book can't be found.");
-    return NO;
-  }
-  
-  // searches for shelf by genre
-  Shelf *new_shelf = [self searchForShelf: genre];
-  if (new_shelf == 0) {
-    NSLog(@"That shelf can't be found.");
-    return NO;
-  }
-  
-  // reshelves book
-  Shelf *old_shelf = [book unShelf];
-  [old_shelf removeBook: book];
-  [new_shelf addBook: book];
-  [book enShelf: new_shelf];
-  NSLog(@"Moved %@ from %@ to %@ shelf.",
-        book.title, old_shelf.genre, new_shelf.genre);
-  return YES;
-}
+//- (BOOL) reShelfBook: (NSString *) title ontoShelf: (NSString *) genre {
+//  
+//  // searches for book by title, returns book and shelf if found
+//  Book *book = [self searchForBook: title];
+//  if (book == 0) {
+//    NSLog(@"That book can't be found.");
+//    return NO;
+//  }
+//  
+//  // searches for shelf by genre
+//  Shelf *new_shelf = [self searchForShelf: genre];
+//  if (new_shelf == 0) {
+//    NSLog(@"That shelf can't be found.");
+//    return NO;
+//  }
+//  
+//  // reshelves book
+//  Shelf *old_shelf = [book unShelf];
+//  [old_shelf removeBook: book];
+//  [new_shelf addBook: book];
+//  [book enShelf: new_shelf];
+//  NSLog(@"Moved %@ from %@ to %@ shelf.",
+//        book.title, old_shelf.genre, new_shelf.genre);
+//  return YES;
+//}
 
 @end
